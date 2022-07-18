@@ -1,0 +1,33 @@
+server:
+  port: 9092
+  servlet:
+        #jetty
+        contextPath: "/api/britto/" 
+        #tomcat
+        context-path: "/api/britto"
+spring:
+  application:
+    name: veterinary
+    profiles:
+        active: '@activatedProperties@'
+  datasource:
+    hikari:
+      auto-commit: true
+      connection-timeout: 20000
+      idle-timeout: 30000
+      max-lifetime: 60000
+      maximum-pool-size: 10
+      minimum-idle: 2
+    password: 1DX%e79^#lXC
+    url: jdbc:mysql://localhost:3306/veterinary
+    username: root
+  info:
+    build:
+      encoding: UTF-8
+  jpa:
+    properties:
+      hibernate:
+        generate_statistics: true
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        temp:
+          use_jdbc_metadata_defaults: false
